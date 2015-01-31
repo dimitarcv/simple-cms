@@ -1,0 +1,1 @@
+http://docs.ckeditor.com/#!/guide/dev_installation
