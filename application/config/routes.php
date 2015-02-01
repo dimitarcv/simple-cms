@@ -40,6 +40,8 @@
 
 $route['admin/(:any)'] = 'admin/$1';
 $route['admin'] = 'admin/home/index';
+$route['search/(:any)'] = 'home/search/$1';
+$route['search'] = 'home/search/';
 $route['(:any)'] = 'home/index/$1';
 $route['default_controller'] = 'home/index';
 $route['404_override'] = '';

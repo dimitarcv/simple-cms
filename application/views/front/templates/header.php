@@ -11,6 +11,12 @@
 
 <div id="page-content">
   <header id="header">
+    <div id="search-form">
+      <?php echo form_open('search', array('class'=>'search-form clearfix', 'method'=>'get')); ?>
+        <input type="text" name="search" value="<?php if(isset($search)) echo $search; ?>">
+        <input type="submit" name="action" value="search">
+      <?php echo form_close(); ?>
+    </div>
     <nav>
       <ul class="clearfix">
         <?php foreach ($pages as $index => $page) { ?>

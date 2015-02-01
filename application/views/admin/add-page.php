@@ -45,7 +45,7 @@ if($edit) $action = "Edit page";
       <button name="add_content" class="link-button float-right">Add content area</button>
       <br>
       <input type="submit" name="submit" value="<?php echo $action; ?>">
-    </form>
+    <?php echo form_close(); ?>
   </div>
 </section><!--#main-content-admin-->
 

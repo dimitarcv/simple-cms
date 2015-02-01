@@ -76,4 +76,20 @@ class Pages extends CI_Model {
     return false;
   }
 
+  public function find_page($search)
+  {
+    $this->db->select("p.page_name, p.page_title, c.contents");
+    $this->db->from('pages p');
+    $this->db->join('(SELECT s.page_id, GROUP_CONCAT(s.content) AS contents FROM page_content s 
+         GROUP BY s.page_id) c', 'c.page_id = p.id');
+    $this->db->like('c.contents', $search);
+
+    $query = $this->db->get();
+    if($query->num_rows() > 0)
+    {
+      return $query->result_array();
+    }
+    return false;
+  }
+
 }

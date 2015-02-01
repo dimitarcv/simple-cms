@@ -87,6 +87,29 @@ table td{
 .content-area:last-child{
   border-bottom: none;
 }
+#search-form{
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+#search-form input{
+  display: block;
+  height: 25px;
+  line-height: 22px;
+  padding: 0 5px;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
+#search-form input[type=text]{
+  width: 70%;
+  float: left;
+}
+#search-form input[type=submit]{
+  width: 28%;
+  float: right;
+  border: none;
+  cursor: pointer;
+}
 .basic-form{
   width: 100%;
   margin: 0;

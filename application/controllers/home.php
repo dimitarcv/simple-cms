@@ -5,6 +5,7 @@ class Home extends CI_Controller {
   {
     parent::__construct();
     $this->load->model('pages');
+    $this->load->library('form_validation');
   }
 
   public function index($page = NULL)
@@ -39,6 +40,36 @@ class Home extends CI_Controller {
     $this->load->view('front/templates/header', $data);
     $this->load->view('front/pages', $data);
     $this->load->view('front/templates/footer', $data);
+  }
+
+  public function search()
+  {
+    $search = $_REQUEST['search'];
+    if($search)
+    {
+      $this->load->helper('text');
+
+      $result = $this->pages->get_all_pages();
+    
+      if($result)
+      {
+        $data['pages'] = $result;
+      }
+      
+      $data['page_title'] = 'Search';
+      $data['page_description'] = 'Search';
+      $data['page_keywords'] = 'Search';
+      $data['search'] = $search;
+      $data['search_results'] = $this->pages->find_page($search);
+
+      $this->load->view('front/templates/header', $data);
+      $this->load->view('front/search-result', $data);
+      $this->load->view('front/templates/footer', $data);
+    }
+    else
+    {
+      show_404();
+    }
   }
 
 }

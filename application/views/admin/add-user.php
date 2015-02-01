@@ -14,6 +14,6 @@
       <input id="rep-password" type="password" name="reppassword" value="" maxlength="50" required>
       <br>
       <input type="submit" name="submit" value="Add user">
-    </form>
+    <?php echo form_close(); ?>
   </div>
 </section><!--#main-content-admin-->
