@@ -1,4 +1,3 @@
 New test
 
-New changes
 Some changes
